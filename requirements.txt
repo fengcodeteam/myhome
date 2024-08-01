@@ -1,2 +1,2 @@
 streamline
-base64
+pillow
