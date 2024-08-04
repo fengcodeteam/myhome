@@ -220,7 +220,7 @@ def page_9():
     st.image('lg.jpg')
     st.write(tb)
 def page_8():
-    books = ['st.txt','三体1地球往事1.txt','三体2黑暗森林.txt','三体3死神永生.txt','球状闪电.txt','超新星纪元.txt']
+    books = ['三体1地球往事1.txt','三体2黑暗森林.txt','三体3死神永生.txt','球状闪电.txt','超新星纪元.txt']
     go = st.selectbox('选择想要看的书',books)
     with open(go,'r',encoding='utf-8') as f:
         tb1 = f.read()
