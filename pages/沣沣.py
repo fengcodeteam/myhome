@@ -59,7 +59,7 @@ def page_1():
     st.code('管理员公告牌'+'\n'+gg1)
     
 def song(a):
-
+    st.write('<font color=#00FFFF>文字</font>')
     st.write(a[:-4])
     with open(a, 'rb') as f:
         mymp3 = f.read()
