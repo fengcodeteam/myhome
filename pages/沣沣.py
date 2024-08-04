@@ -29,8 +29,7 @@ def page_bg(img):
     )
 bar_bg('bj2.png')
 page_bg('bj1.jpg')
-bar_list = ['我的简介', '我的音乐', '聊天区', '留言区','留言聊天区发送后未显示点这里','作者荣誉','打赏作者','词典','《三体》人物介绍','《三体1：地球往事》阅读',
-                                 '《三体2：黑暗森林》阅读','《三体3：死神永生》阅读','《球状闪电》阅读','《超新星纪元》阅读']
+bar_list = ['我的简介', '我的音乐', '聊天区', '留言区','留言聊天区发送后未显示点这里','作者荣誉','打赏作者','词典','《三体》人物介绍','阅读区']
 page = st.sidebar.radio('沣沣的网站', bar_list)
 
 def page_1():
@@ -211,7 +210,8 @@ def page_7():
             
     else:
         st.write('您查询的单词不存在！')
-def page_8():
+def page_9():
+    books = ['st.txt','三体1地球往事1.txt','三体2黑暗森林.txt','三体3死神永生.txt','球状闪电.txt','超新星纪元.txt']
     with open('st.txt','r',encoding='utf-8') as f:
         tb = f.read()
     st.code('''
@@ -219,28 +219,12 @@ def page_8():
             ''')
     st.image('lg.jpg')
     st.write(tb)
-def page_9():
-    with open('三体1地球往事1.txt','r',encoding='utf-8') as f:
+def page_8():
+    books = ['st.txt','三体1地球往事1.txt','三体2黑暗森林.txt','三体3死神永生.txt','球状闪电.txt','超新星纪元.txt']
+    go = st.selectbox('选择想要看的书',books)
+    with open(go,'r',encoding='utf-8') as f:
         tb1 = f.read()
     st.write(tb1)    
-def page_10():
-    with open('三体2黑暗森林.txt','r',encoding='utf-8') as f:
-        tb2 = f.read()
-    st.write(tb2)    
-def page_11():
-    with open('三体3死神永生.txt','r',encoding='utf-8') as f:
-        tb4 = f.read()
-    st.write(tb4)    
-def page_12():
-    with open('球状闪电.txt','r',encoding='utf-8') as f:
-        tb3 = f.read()
-    st.write(tb3)    
-def page_13():
-    st.write('刷新成功，请回到留言或聊天区')
-def page_14():
-    with open('超新星纪元.txt','r',encoding='utf-8') as f:
-        tb3 = f.read()
-    st.write(tb3)    
 if page == '我的简介':
     page_1()
 elif page == '我的音乐':
@@ -255,19 +239,9 @@ elif page == '打赏作者':
     page_6()
 elif page == '词典':
     page_7()
-elif page == '《三体》人物介绍':
+elif page == '阅读区':
     page_8()
-elif page == '《三体1：地球往事》阅读':
+elif page == '《三体》人物介绍':
     page_9()
-elif page == '《三体2：黑暗森林》阅读':
-    page_10()
-elif page == '《三体3：死神永生》阅读':
-    page_11()
-elif page == '《球状闪电》阅读':
-    page_12()
-elif page == '留言聊天区发送后未显示点这里':
-    page_13()
-elif page == '《超新星纪元》阅读':
-    page_14()
          
 
